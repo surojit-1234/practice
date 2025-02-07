@@ -1,0 +1,23 @@
+.parent{
+  div{
+    color: red;
+    position: relative;
+    display: inline;
+    &::after{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: '';
+      height:2px;
+      width: 10%;
+      background-color: aqua;
+      transition: .4s;
+    }
+    &:hover{
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+  
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .image-container{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+        }
+        /* .image-container div{
+            width: 100%;
+        } */
+        .image-container div img{
+            width: 100%;
+        }
+        .member h2{
+          margin: 0;
+          text-align: center;
+        }
+        .member p{
+          margin: 0;
+          text-align: center;
+        }
+        .member{
+          position: relative;
+        }
+        .member .fa-info-circle{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          color: white;
+          font-size: 20px;
+          box-shadow: 0 0 3px 3px  rgba(0,0,0,0.3);
+          border-radius: 50%;
+        }
+
+        .overlay{
+         background-color: aquamarine;
+         /* width: 40%; */
+         overflow: hidden;
+         width: 40%;
+         /* height: 0; */
+         /* padding: 20px 30px 20px 30px; */
+        
+        }
+        .overlay-content{
+            position: relative;
+        }
+        .overlay-content p{
+
+        }
+        .overlay-content .cross-btn {
+          
+        }
+        .overlay-content .cross-btn {
+            position: absolute;
+            right: -10px;
+            top: -30px;
+            text-align: right;
+            font-size: 20px;
+        }
+        .overlay-content p{
+            font-size: 25px;
+        }
+        body{
+            position: relative;
+            height: 90vh;
+
+        }
+        .overlay{
+            transition: 0.5s;
+            position: fixed;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 0;
+            /* box-shadow: 0 0 730px 730px rgba(0,0,0,0.8); */
+        }
+       
+        .member-img{
+           position: relative;
+           height: auto;
+        }
+       
+         .img-overlay-1{
+         transition: 0.5s;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 0%;
+         background-color: rgba(0,0,0,0.8);
+        }
+        .img-overlay-2{
+         transition: 0.5s;
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         height: 0%;
+         background-color: rgba(0,0,0,0.8);
+        }
+        .member-img h3{
+          position: absolute;
+          transition: 0.5s;
+          opacity: 0;
+          left: 50%;
+          top: 45%;
+          transform: translate(-50%,-50%);
+          color: white;
+          z-index: 5;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div class="image-container" >
+        <div class="member">
+            <div class="member-img">
+              <img src="https://osaat.org/resources/rajiv-r.jpg" alt="rajiv Raghvban">
+                <div class="img-overlay-1"></div>
+                   <h3>Amal pal</h3>
+                <div class="img-overlay-2"></div>
+            </div>
+            <i aria-hidden="true" class="fas fa-info-circle" onclick="Member1()"></i>
+            <h2>ANUP DAS</h2>
+            <p>Chairman</p>
+            <!-- <div class="img-overlay">
+                <h3>Sanjay Sen</h3>
+            </div> -->
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+               <img src="https://osaat.org/resources/Jagadeesh.jpg" alt="">
+                    <div class="img-overlay-1"></div>
+                    <h3>Amal pal</h3>
+                    <div class="img-overlay-2"></div>
+            </div>
+            <i aria-hidden="true" class="fas fa-info-circle" onclick="Member2()"></i>
+            <h2>Ajay DAS</h2>
+            <p>Vice-President</p>
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+               <img src="https://osaat.org/resources/paddu.jpg" alt="">
+            
+                    <div class="img-overlay-1"></div>
+                    <h3>Amal pal</h3>
+                    <div class="img-overlay-2"></div>
+              
+            </div>
+            <i aria-hidden="true" class="fas fa-info-circle" onclick="Member3()"></i>
+            <h2>Sourav Pandey</h2>
+            <p>General Executive</p>
+          
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+                <img src="https://osaat.org/resources/chandar-p.jpg" alt="">
+               
+                    <div class="img-overlay-1"></div>
+                    <h3>Amal pal</h3>
+                    <div class="img-overlay-2"></div>
+               
+            </div>
+
+            <i aria-hidden="true" class="fas fa-info-circle"  onclick="Member4()"></i>
+            <h2>Amiyo Ojha</h2>
+            <p>Founder</p>
+           
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+                <img src="https://osaat.org/resources/ravish-b.jpg" alt="">
+                
+                    <div class="img-overlay-1"></div>
+                    <h3>Amal pal</h3>
+                    <div class="img-overlay-2"></div>
+                
+            </div>
+            <i aria-hidden="true" class="fas fa-info-circle" onclick="Member5()"></i>
+            <h2>Barun Singh</h2>
+            <p>Co-Founder</p>
+            
+        </div>
+
+        <div class="member">
+            <div class="member-img">
+                <img src="https://osaat.org/resources/vijay-p.jpg" alt="">
+                
+                    <div class="img-overlay-1"></div>
+                    <h3>Amal pal</h3>
+                    <div class="img-overlay-2"></div>
+               
+            </div>
+            <i aria-hidden="true" class="fas fa-info-circle" onclick="Member6()"></i>
+            <h2>Ayan Pal</h2>
+            <p>Vice-Chancellor</p>
+            
+        </div>
+
+    </div>
+
+    <div class="overlay">
+        <div class="overlay-content">
+          <div class="cross-btn"><i class="fa-solid fa-xmark"></i></div> 
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo error nisi earum deserunt repudiandae animi vel, expedita suscipit minus fugiat quod. Corporis temporibus tempora accusamus eum, ex nam obcaecati est?</p>
+        </div>
+    </div>
+    
+    <script>
+        var overlay=document.querySelector(".overlay")
+        function AllMembers(info){
+          document.querySelector('.overlay-content p').innerHTML=info;
+          overlay.style.height="fit-content";
+          overlay.style.top='50%';
+          overlay.style.padding= '20px 30px 20px 30px';
+          setTimeout(()=>{
+            overlay.style.boxShadow= '0 0 730px 730px rgba(0,0,0,0.8)';
+          },200)
+          
+        }
+        
+        const Member1=()=>{
+           info="Paddu Melanahalli has been engaged in community services and non-profit organization developments over two decades at various levels. He is a true believer of education and one can always make a difference with the right attitude, commitment and focus. He is a software engineer by profession and lives in bay area with his wife Vanitha Belur and two kids – Akshata & Shreyas."
+           AllMembers(info);
+        }
+
+        const Member2=()=>{
+            info="Ramesh Javagal, a software engineer by profession, has been engaged in community service and supporting non-profit organizations for 15+ years in various capacities. He is passionate about providing quality education and resources to underserved students. Ramesh believes in the importance of teamwork, dedication and commitment in all his endeavors. He lives in San Francisco Bay Area with his wife Rathna and children Raksha and Kishan."
+           AllMembers(info)
+        }
+
+        const Member3=()=>{
+            info="Mangala Kumar earned a Bachelor’s Degree in Electrical Engineering from Bangalore University and for over 25 years held Senior Management positions in Product Management, Marketing and Business Development while at Nortel, Siemens Communications and Aspect Communications. She is involved with several Bay are Non-profit community service organizations including OSAAT, and served as Executive Director of India Community Service Center (ICSC) and Senior Director of Programs at India Community Center. She feels very blessed to be able to use her time and energy to serve the community. Mangala lives in the Bay area with her husband and son."
+           AllMembers(info)
+        }
+
+        const Member4=()=>{
+            info="Naren is a software professional and works for Cisco. He hails from Bangalore and is active in non-profit organizations in the bay area. He likes to utilize his skills at marketing and fund raising activities for OSAAT. He lives in San Jose with his wife Prathibha and son Samarth. He likes volunteering and photography."
+           AllMembers(info)
+        }
+
+        const Member5=()=>{
+            info="Shashi Kiran is a OSAAT Volunteer and driving marketing and fund raising initatives. 25+ years in hi-tech industries. Global marketing leadership positions at Cisco, Nortel, Aryaka Networks etc. Startup advisor. Passionate about education"
+           AllMembers(info)
+        }
+
+        const Member6=()=>{
+            info="Naren is a software professional and works for Cisco. He hails from Bangalore and is active in non-profit organizations in the bay area. He likes to utilize his skills at marketing and fund raising activities for OSAAT. He lives in San Jose with his wife Prathibha and son Samarth. He likes volunteering and photography."
+           AllMembers(info)
+        }
+       var cross_btn=document.querySelector(".cross-btn")
+        cross_btn.addEventListener("click",()=>{
+          overlay.style.height="0";
+          overlay.style.top='0%';
+          overlay.style.padding= '0';
+          setTimeout(()=>{
+            overlay.style.boxShadow= '0 0 0 0 rgba(0,0,0,0)';
+          },100)
+          
+       })
+
+       /*--------------*/
+       window.addEventListener('mouseup',function(event){
+        var pol = document.querySelector(".cross-btn");
+        if(event.target != pol && event.target.parentNode != pol){
+          overlay.style.height="0";
+          overlay.style.top='0%';
+          overlay.style.padding= '0';
+          setTimeout(()=>{
+            overlay.style.boxShadow= '0 0 0 0 rgba(0,0,0,0)';
+          },100)
+        }
+    });
+       /*---------------*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.parent div {
+  color: red;
+  position: relative;
+  display: inline;
+}
+.parent div::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  width: 10%;
+  background-color: aqua;
+  transition: 0.4s;
+}
+.parent div:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
